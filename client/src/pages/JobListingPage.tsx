@@ -1,8 +1,11 @@
+import Filter from "@/components/general/filter/Filter";
 
 const JobListingPage = () => {
   return (
-    <div>JobListingPage</div>
-  )
-}
+    <section>
+      <Filter />
+    </section>
+  );
+};
 
-export default JobListingPage
+export default JobListingPage;

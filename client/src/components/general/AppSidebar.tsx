@@ -10,11 +10,13 @@ import {
 } from "@/components/ui/sidebar";
 import { navItems } from "@/utils/ui-data";
 import { HiArrowRight } from "react-icons/hi2";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useSidebar } from "@/components/ui/sidebar";
 
 export function AppSidebar() {
   const { setOpenMobile, isMobile } = useSidebar();
+
+  const location = useLocation();
 
   const handleSidebar = () => {
     if (isMobile) {
@@ -37,11 +39,16 @@ export function AppSidebar() {
           <SidebarGroupContent className="my-4">
             <SidebarMenu>
               {navItems.map((item) => (
-                <SidebarMenuItem key={item.id}>
-                  <SidebarMenuButton asChild>
+                <SidebarMenuItem key={item.name}>
+                  <SidebarMenuButton
+                    asChild
+                    isActive={location.pathname === item.url}
+                    className={`hover:text-primary active:text-primary data-[active=true]:text-primary`}
+                  >
                     <NavLink
                       to={item.url}
-                      className="text-secondary-foreground hover:text-primary"
+                      className=""
+                      onClick={() => setOpenMobile(false)}
                     >
                       <item.icon />
                       <span className="font-poppins">{item.name}</span>

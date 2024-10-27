@@ -1,0 +1,3 @@
+.container-max {
+  @apply max-w-screen-xl mx-auto;
+}
