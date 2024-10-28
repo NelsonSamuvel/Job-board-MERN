@@ -30,9 +30,9 @@ const navItems = [
 
 const filterTypes = {
   jobType: [
-    { name: "Full-time" },
-    { name: "Part-time" },
-    { name: "Internship" },
+    { name: "Full-time", value: "fullTime" },
+    { name: "Part-time", value: "partTime" },
+    { name: "Internship", value: "internship" },
   ],
   salary: [
     { value: 2 },
