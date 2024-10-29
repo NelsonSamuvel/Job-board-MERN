@@ -6,10 +6,10 @@ import { navItems } from "@/utils/ui-data";
 
 const NavBar = () => {
   return (
-    <header className="px-2 md:px-4 py-4">
+    <header className="px-2 md:px-4 py-6 fixed w-full bg-white">
       <SidebarLayout>
         <nav className="max-md:flex-1  max-md:gap-4  flex items-center justify-between container-max gap-4">
-          <h1 className="text-primary font-semibold max-lg:text-xl text-2xl">
+          <h1 className="text-primary font-semibold self-start max-lg:text-xl text-2xl">
             Vacancee
           </h1>
           <ul className="md:flex items-center hidden gap-4 text-muted-foreground">

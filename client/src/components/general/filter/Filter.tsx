@@ -1,13 +1,14 @@
-
 import FilterBtn from "./FilterBtn";
 
 export type FilterType = {
-  handleFilter: () => void;
+  handleFilterToggle?: () => void;
 };
 
-const Filter = ({ handleFilter }: FilterType) => {
+const Filter = ({ handleFilterToggle }: FilterType) => {
   return (
-    <div className="py-4 px-2">{<FilterBtn handleFilter={handleFilter} />}</div>
+    <div className="py-4 px-2">
+      {<FilterBtn handleFilterToggle={handleFilterToggle} />}
+    </div>
   );
 };
 

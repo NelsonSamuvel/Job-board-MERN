@@ -1,7 +1,6 @@
 import { intervalToDuration } from "date-fns";
 export const differenceInDateObj = (date1: Date, date2: Date): string => {
   const dateObj = intervalToDuration({ start: date1, end: date2 });
-  console.log(dateObj);
   let res = "";
   if (dateObj.months) {
     res =

@@ -10,14 +10,16 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 import {
+  clearFilters,
   setExperience,
   setJobType,
   setSalary,
 } from "@/redux/features/filters/filterSlice";
 import { ChangeEvent } from "react";
-import { HiPlus } from "react-icons/hi2";
+import { HiArrowLeft, HiPlus } from "react-icons/hi2";
+import { FilterType } from "./Filter";
 
-const FilterPage = () => {
+const FilterPage = ({ handleFilterToggle }: FilterType) => {
   const {
     jobType,
     experience,
@@ -36,14 +38,29 @@ const FilterPage = () => {
   };
 
   const handleSalary = (value: number) => {
-    dispatch(setSalary(value));
+    if (salaryState === value) {
+      dispatch(setSalary(null));
+    } else {
+      dispatch(setSalary(value));
+    }
+  };
+
+  const handleClear = () => {
+    dispatch(clearFilters());
   };
 
   return (
-    <section className="lg:hidden">
-      <div className="container-max px-4 min-h-[80vh] grid grid-rows-[1fr_auto]">
+    <section className="max-lg:pt-24">
+      <div className="container-max px-4 min-h-[80vh] lg:min-h-full grid grid-rows-[1fr_auto]">
         {/* Job Type */}
         <div className="">
+          <div className="pb-6 lg:hidden">
+            <HiArrowLeft
+              className="icon-size hover:text-primary"
+              onClick={handleFilterToggle}
+            />
+          </div>
+      
           <div className="pb-6">
             <h3 className="text-muted-foreground font-semibold">Job Type</h3>
             <ul className="space-y-2 my-4">
@@ -78,10 +95,11 @@ const FilterPage = () => {
                 </SelectTrigger>
                 <SelectContent align="start" side="bottom">
                   {filterTypes["experience"].map((experience) => (
-                    <SelectItem value={experience.value}>
+                    <SelectItem key={experience.name} value={experience.value}>
                       {experience.name}
                     </SelectItem>
                   ))}
+                  <SelectItem value="none">None</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -115,10 +133,14 @@ const FilterPage = () => {
           {/* Experience */}
         </div>
 
-        <div className="">
-          <div className="flex gap-4 justify-end">
-            <Button variant="outline">Clear All</Button>
-            <Button>Apply All</Button>
+
+
+        <div>
+          <div className="flex gap-4 justify-end lg:hidden">
+            <Button variant="outline" onClick={handleClear}>
+              Clear All
+            </Button>
+            <Button onClick={handleFilterToggle}>Apply All</Button>
           </div>
         </div>
       </div>

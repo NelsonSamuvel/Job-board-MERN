@@ -14,7 +14,9 @@ const initialState: StateType = {
   jobType: {
     partTime: false,
     fullTime: false,
-    internship: false,
+    remote: false,
+    freelance: false,
+    contract: false,
   },
   experience: "",
   salary: null,
@@ -34,9 +36,15 @@ const filterSlice = createSlice({
     setSalary: (state, action) => {
       state.salary = action.payload;
     },
+    clearFilters: (state) => {
+      state.jobType = initialState.jobType;
+      state.experience = initialState.experience;
+      state.salary = initialState.salary;
+    },
   },
 });
 
-export const { setJobType, setExperience, setSalary } = filterSlice.actions;
+export const { setJobType, setExperience, setSalary, clearFilters } =
+  filterSlice.actions;
 
 export default filterSlice.reducer;

@@ -32,7 +32,9 @@ const filterTypes = {
   jobType: [
     { name: "Full-time", value: "fullTime" },
     { name: "Part-time", value: "partTime" },
-    { name: "Internship", value: "internship" },
+    { name: "Remote", value: "remote" },
+    { name: "Freelance", value: "freelance" },
+    { name: "Contract", value: "contract" },
   ],
   salary: [
     { value: 2 },
