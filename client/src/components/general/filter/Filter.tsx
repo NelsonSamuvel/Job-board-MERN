@@ -1,18 +1,13 @@
-import { useState } from "react";
-import FilterPage from "./FilterPage";
+
 import FilterBtn from "./FilterBtn";
 
-const Filter = () => {
-  const [filterOpen, setFilterOpen] = useState(false);
+export type FilterType = {
+  handleFilter: () => void;
+};
 
+const Filter = ({ handleFilter }: FilterType) => {
   return (
-    <div className="py-4 px-2">
-      {filterOpen ? (
-        <FilterPage />
-      ) : (
-        <FilterBtn handleFilter={() => setFilterOpen(true)} />
-      )}
-    </div>
+    <div className="py-4 px-2">{<FilterBtn handleFilter={handleFilter} />}</div>
   );
 };
 

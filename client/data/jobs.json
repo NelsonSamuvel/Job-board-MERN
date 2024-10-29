@@ -1,0 +1,249 @@
+{
+  "jobs": [
+    {
+      "id": 1,
+      "jobTitle": "Frontend Developer",
+      "companyName": "Tech Innovators",
+      "companyLocation": "Remote",
+      "companyLogo": "https://picsum.photos/200?random=1",
+      "workType": "Full-time",
+      "experience": "2+ years",
+      "ctc": "₹8,00,000 - ₹12,00,000",
+      "applyBy": "2024-12-31",
+      "workLocationType": "Remote",
+      "responsibilities": [
+        "Develop and maintain web applications using React.",
+        "Collaborate with designers and backend developers."
+      ],
+      "qualifications": [
+        "Bachelor's degree in Computer Science",
+        "Proficiency in JavaScript and React"
+      ],
+      "skills": ["React", "JavaScript", "HTML/CSS", "Redux"],
+      "noOfOpenings": 3,
+      "companyWebsite": "https://tech-innovators.com",
+      "createdAt": "2024-10-15"
+    },
+    {
+      "id": 2,
+      "jobTitle": "Backend Developer",
+      "companyName": "Code Masters",
+      "companyLocation": "Bangalore, India",
+      "companyLogo": "https://picsum.photos/200?random=2",
+      "workType": "Part-time",
+      "experience": "3+ years",
+      "ctc": "₹6,00,000 - ₹9,00,000",
+      "applyBy": "2024-11-30",
+      "workLocationType": "On-site",
+      "responsibilities": [
+        "Develop RESTful APIs using Node.js.",
+        "Design and maintain database schemas."
+      ],
+      "qualifications": [
+        "Bachelor's degree in Computer Science",
+        "Experience with Node.js and Express"
+      ],
+      "skills": ["Node.js", "Express", "MongoDB", "REST APIs"],
+      "noOfOpenings": 2,
+      "companyWebsite": "https://code-masters.io",
+      "createdAt": "2024-10-22"
+    },
+    {
+      "id": 3,
+      "jobTitle": "Data Analyst",
+      "companyName": "DataVision",
+      "companyLocation": "Mumbai, India",
+      "companyLogo": "https://picsum.photos/200?random=3",
+      "workType": "Full-time",
+      "experience": "1+ year",
+      "ctc": "₹5,00,000 - ₹7,00,000",
+      "applyBy": "2024-12-15",
+      "workLocationType": "Hybrid",
+      "responsibilities": [
+        "Analyze data trends and provide insights.",
+        "Create data visualizations and reports."
+      ],
+      "qualifications": [
+        "Bachelor's degree in Statistics or Mathematics",
+        "Proficiency in Python and SQL"
+      ],
+      "skills": ["Python", "SQL", "Excel", "Tableau"],
+      "noOfOpenings": 1,
+      "companyWebsite": "https://datavision.com",
+      "createdAt": "2024-10-10"
+    },
+    {
+      "id": 4,
+      "jobTitle": "Mobile App Developer",
+      "companyName": "AppWave",
+      "companyLocation": "Chennai, India",
+      "companyLogo": "https://picsum.photos/200?random=4",
+      "workType": "Freelance",
+      "experience": "2+ years",
+      "ctc": "₹4,00,000 - ₹6,00,000",
+      "applyBy": "2024-12-05",
+      "workLocationType": "Remote",
+      "responsibilities": [
+        "Build and maintain Android and iOS applications.",
+        "Ensure app performance and reliability."
+      ],
+      "qualifications": [
+        "Proven experience in mobile app development",
+        "Knowledge of React Native or Flutter"
+      ],
+      "skills": ["React Native", "Flutter", "Java", "Swift"],
+      "noOfOpenings": 1,
+      "companyWebsite": "https://appwave.com",
+      "createdAt": "2024-10-12"
+    },
+    {
+      "id": 5,
+      "jobTitle": "Product Manager",
+      "companyName": "FutureTech",
+      "companyLocation": "Pune, India",
+      "companyLogo": "https://picsum.photos/200?random=5",
+      "workType": "Full-time",
+      "experience": "4+ years",
+      "ctc": "₹12,00,000 - ₹15,00,000",
+      "applyBy": "2024-11-20",
+      "workLocationType": "Hybrid",
+      "responsibilities": [
+        "Define product vision and strategy.",
+        "Work with cross-functional teams to deliver features."
+      ],
+      "qualifications": [
+        "MBA or equivalent experience",
+        "Strong understanding of Agile methodologies"
+      ],
+      "skills": ["Product Management", "Agile", "JIRA", "Market Research"],
+      "noOfOpenings": 1,
+      "companyWebsite": "https://futuretech.com",
+      "createdAt": "2024-10-05"
+    },
+    {
+      "id": 6,
+      "jobTitle": "UX/UI Designer",
+      "companyName": "Creative Minds",
+      "companyLocation": "Delhi, India",
+      "companyLogo": "https://picsum.photos/200?random=6",
+      "workType": "Contract",
+      "experience": "2+ years",
+      "ctc": "₹5,00,000 - ₹8,00,000",
+      "applyBy": "2024-11-15",
+      "workLocationType": "On-site",
+      "responsibilities": [
+        "Create wireframes and prototypes.",
+        "Collaborate with developers to implement designs."
+      ],
+      "qualifications": [
+        "Bachelor's degree in Design",
+        "Experience with Adobe XD or Figma"
+      ],
+      "skills": ["Figma", "Adobe XD", "Sketch", "User Research"],
+      "noOfOpenings": 2,
+      "companyWebsite": "https://creativeminds.com",
+      "createdAt": "2024-10-18"
+    },
+    {
+      "id": 7,
+      "jobTitle": "DevOps Engineer",
+      "companyName": "CloudWorks",
+      "companyLocation": "Hyderabad, India",
+      "companyLogo": "https://picsum.photos/200?random=7",
+      "workType": "Full-time",
+      "experience": "3+ years",
+      "ctc": "₹10,00,000 - ₹14,00,000",
+      "applyBy": "2024-12-10",
+      "workLocationType": "Hybrid",
+      "responsibilities": [
+        "Manage CI/CD pipelines.",
+        "Optimize cloud infrastructure for performance."
+      ],
+      "qualifications": [
+        "Experience with AWS and Docker",
+        "Strong scripting knowledge (Bash, Python)"
+      ],
+      "skills": ["AWS", "Docker", "CI/CD", "Kubernetes"],
+      "noOfOpenings": 1,
+      "companyWebsite": "https://cloudworks.com",
+      "createdAt": "2024-10-25"
+    },
+    {
+      "id": 8,
+      "jobTitle": "Marketing Specialist",
+      "companyName": "BrandBuzz",
+      "companyLocation": "Remote",
+      "companyLogo": "https://picsum.photos/200?random=8",
+      "workType": "Part-time",
+      "experience": "1+ year",
+      "ctc": "₹3,00,000 - ₹5,00,000",
+      "applyBy": "2024-12-20",
+      "workLocationType": "Remote",
+      "responsibilities": [
+        "Create and execute marketing campaigns.",
+        "Analyze campaign performance and adjust strategies."
+      ],
+      "qualifications": [
+        "Bachelor's in Marketing",
+        "Experience with digital marketing tools"
+      ],
+      "skills": [
+        "SEO",
+        "Google Ads",
+        "Social Media Marketing",
+        "Content Writing"
+      ],
+      "noOfOpenings": 3,
+      "companyWebsite": "https://brandbuzz.com",
+      "createdAt": "2024-10-28"
+    },
+    {
+      "id": 9,
+      "jobTitle": "Full Stack Developer",
+      "companyName": "WebGenius",
+      "companyLocation": "Mumbai, India",
+      "companyLogo": "https://picsum.photos/200?random=9",
+      "workType": "Full-time",
+      "experience": "3+ years",
+      "ctc": "₹9,00,000 - ₹13,00,000",
+      "applyBy": "2024-11-28",
+      "workLocationType": "Hybrid",
+      "responsibilities": [
+        "Develop frontend and backend solutions.",
+        "Collaborate in Agile teams."
+      ],
+      "qualifications": [
+        "Experience with MERN stack",
+        "Strong JavaScript knowledge"
+      ],
+      "skills": ["JavaScript", "React", "Node.js", "MongoDB"],
+      "noOfOpenings": 2,
+      "companyWebsite": "https://webgenius.com",
+      "createdAt": "2024-10-01"
+    },
+    {
+      "id": 10,
+      "jobTitle": "Content Writer",
+      "companyName": "WriteWay",
+      "companyLocation": "Remote",
+      "companyLogo": "https://picsum.photos/200?random=10",
+      "workType": "Freelance",
+      "experience": "1+ year",
+      "ctc": "₹2,00,000 - ₹4,00,000",
+      "applyBy": "2024-12-25",
+      "workLocationType": "Remote",
+      "responsibilities": [
+        "Create engaging content for blogs and websites.",
+        "Collaborate with marketing teams."
+      ],
+      "qualifications": [
+        "Bachelor's in English or related field",
+        "Strong writing and editing skills"
+      ],
+      "skills": ["Content Writing", "SEO", "Research", "Editing"],
+      "noOfOpenings": 1,
+      "companyWebsite": "https://writeway.com",
+      "createdAt": "2024-10-29"
+    }
+  ]
+}

@@ -40,7 +40,7 @@ const FilterPage = () => {
   };
 
   return (
-    <section className="">
+    <section className="lg:hidden">
       <div className="container-max px-4 min-h-[80vh] grid grid-rows-[1fr_auto]">
         {/* Job Type */}
         <div className="">
@@ -116,7 +116,7 @@ const FilterPage = () => {
         </div>
 
         <div className="">
-          <div className="flex gap-4 w-1/2">
+          <div className="flex gap-4 justify-end">
             <Button variant="outline">Clear All</Button>
             <Button>Apply All</Button>
           </div>
