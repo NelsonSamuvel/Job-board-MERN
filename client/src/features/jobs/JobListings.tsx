@@ -18,6 +18,7 @@ import {
   HiOutlineMapPin,
 } from "react-icons/hi2";
 import { useSelector } from "react-redux";
+import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 
 enum FilterNames {
   fullTime = "Full-time",
@@ -77,7 +78,6 @@ const JobListings = () => {
       filteredJobs = filteredJobs.filter((job) => {
         const salaryAmt = job.ctc.split(" ")[0].slice(1);
         const salaryInNum = Number(salaryAmt.split(",").join(""));
-        console.log(salaryInNum);
         return salaryInNum >= salary * 100000;
       });
     }
@@ -92,9 +92,19 @@ const JobListings = () => {
               <Card key={job.id}>
                 <CardHeader>
                   <div className="flex justify-between items-center">
-                    <div className="space-y-2">
-                      <CardTitle>{job.jobTitle}</CardTitle>
-                      <CardDescription>{job.companyName}</CardDescription>
+                    <div className="space-y-2 md:flex md:gap-2 md:items-center">
+                      <Avatar className="w-[35px] hidden md:block">
+                        <AvatarImage
+                          src={job.companyLogo}
+                          className="rounded-full object-cover"
+                        />
+                        <AvatarFallback className="text-xs hidden">{job.companyName}</AvatarFallback>
+                      </Avatar>
+
+                      <div>
+                        <CardTitle>{job.jobTitle}</CardTitle>
+                        <CardDescription>{job.companyName}</CardDescription>
+                      </div>
                     </div>
                     <div className="self-start">
                       <HiOutlineBookmark className="icon-size" />

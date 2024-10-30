@@ -1,5 +1,5 @@
 import { Button } from "../ui/button";
-import { Input } from "../ui/input";
+// import { Input } from "../ui/input";
 import { NavLink } from "react-router-dom";
 import SidebarLayout from "../../layout/SidebarLayout";
 import { navItems } from "@/utils/ui-data";
@@ -27,10 +27,10 @@ const NavBar = () => {
             ))}
           </ul>
 
-          <Input
+          {/* <Input
             className="rounded-full bg-muted border-none hidden lg:block md:w-1/2"
             placeholder="Search by jobs, locations"
-          />
+          /> */}
 
           <ul className="md:flex items-center hidden gap-4 text-muted-foreground">
             {navItems.slice(2).map((item) => (

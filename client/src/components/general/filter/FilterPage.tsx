@@ -18,6 +18,7 @@ import {
 import { ChangeEvent } from "react";
 import { HiArrowLeft, HiPlus } from "react-icons/hi2";
 import { FilterType } from "./Filter";
+import JobSearch from "@/features/jobs/JobSearch";
 
 const FilterPage = ({ handleFilterToggle }: FilterType) => {
   const {
@@ -60,7 +61,14 @@ const FilterPage = ({ handleFilterToggle }: FilterType) => {
               onClick={handleFilterToggle}
             />
           </div>
-      
+
+          <div className="pb-6">
+            <h3 className="text-muted-foreground font-semibold">Search Jobs</h3>
+            <div className="my-4">
+              <JobSearch />
+            </div>
+          </div>
+
           <div className="pb-6">
             <h3 className="text-muted-foreground font-semibold">Job Type</h3>
             <ul className="space-y-2 my-4">
@@ -82,6 +90,8 @@ const FilterPage = ({ handleFilterToggle }: FilterType) => {
               ))}
             </ul>
           </div>
+
+          {/* experience */}
 
           <div className="pb-6">
             <h3 className="text-muted-foreground font-semibold mb-4">
@@ -121,7 +131,12 @@ const FilterPage = ({ handleFilterToggle }: FilterType) => {
                       className={`rounded-full tracking-wide`}
                       onClick={() => handleSalary(salary.value)}
                     >
-                      {isSalary && <HiPlus />}
+                      {isSalary && (
+                        <>
+                          <HiPlus />
+                          <span>at least</span>
+                        </>
+                      )}
                       {salary.value} lakhs
                     </Button>
                   </li>
@@ -129,11 +144,7 @@ const FilterPage = ({ handleFilterToggle }: FilterType) => {
               })}
             </ul>
           </div>
-
-          {/* Experience */}
         </div>
-
-
 
         <div>
           <div className="flex gap-4 justify-end lg:hidden">
