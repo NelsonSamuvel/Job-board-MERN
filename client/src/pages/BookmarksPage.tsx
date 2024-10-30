@@ -1,8 +1,11 @@
-
 const BookmarksPage = () => {
   return (
-    <div>BookmarksPage</div>
-  )
-}
+    <section>
+      <div className="container-max">
+        <h2 className="h2 text-center">My Bookmarks</h2>
+      </div>
+    </section>
+  );
+};
 
-export default BookmarksPage
+export default BookmarksPage;

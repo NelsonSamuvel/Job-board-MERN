@@ -6,8 +6,8 @@ const FilterSidebar = ({ children }: { children: ReactNode }) => {
   return (
     <section>
       <SidebarProvider>
-          <FIlterItemsSidebar />
-          <main>{children}</main>
+        <FIlterItemsSidebar />
+        <main>{children}</main>
       </SidebarProvider>
     </section>
   );

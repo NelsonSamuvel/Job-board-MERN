@@ -15,7 +15,7 @@ import {
   setJobType,
   setSalary,
 } from "@/redux/features/filters/filterSlice";
-import { ChangeEvent } from "react";
+import { ChangeEvent, useEffect } from "react";
 import { HiArrowLeft, HiPlus } from "react-icons/hi2";
 import { FilterType } from "./Filter";
 import JobSearch from "@/features/jobs/JobSearch";
@@ -50,8 +50,19 @@ const FilterPage = ({ handleFilterToggle }: FilterType) => {
     dispatch(clearFilters());
   };
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        handleFilterToggle?.();
+      }
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
-    <section className="max-lg:pt-24">
+    <section>
       <div className="container-max px-4 min-h-[80vh] lg:min-h-full grid grid-rows-[1fr_auto]">
         {/* Job Type */}
         <div className="">
@@ -62,7 +73,7 @@ const FilterPage = ({ handleFilterToggle }: FilterType) => {
             />
           </div>
 
-          <div className="pb-6">
+          <div className="pb-6 hidden lg:block">
             <h3 className="text-muted-foreground font-semibold">Search Jobs</h3>
             <div className="my-4">
               <JobSearch />
@@ -116,7 +127,7 @@ const FilterPage = ({ handleFilterToggle }: FilterType) => {
           </div>
 
           {/* Salary */}
-          <div className="pb-6">
+          <div className="pb-8 lg:pb-12">
             <h3 className="text-muted-foreground font-semibold">
               Annual Salary <span className="text-sm">(in lakhs)</span>
             </h3>

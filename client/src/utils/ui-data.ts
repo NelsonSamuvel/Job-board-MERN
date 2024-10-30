@@ -61,7 +61,7 @@ export const searchJobs = [
   { label: "Mobile App Developer", value: "mobileAppDeveloper" },
   { label: "Data Analyst", value: "dataAnalyst" },
   { label: "Product Manager", value: "productManager" },
-  { label: "UX/UI Designer", value: "ui/uxDesigner" },
+  { label: "UX/UI Designer", value: "ux/uiDesigner" },
   { label: "Content Writer", value: "contentWriter" },
   { label: "Marketing Specialist", value: "marketingSpecialist" },
 ];

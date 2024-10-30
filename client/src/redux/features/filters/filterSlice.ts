@@ -8,6 +8,7 @@ interface StateType {
   jobType: JobType;
   experience: string;
   salary: null | number;
+  searchedJobVal: string;
 }
 
 const initialState: StateType = {
@@ -20,6 +21,7 @@ const initialState: StateType = {
   },
   experience: "",
   salary: null,
+  searchedJobVal: "",
 };
 
 const filterSlice = createSlice({
@@ -40,11 +42,20 @@ const filterSlice = createSlice({
       state.jobType = initialState.jobType;
       state.experience = initialState.experience;
       state.salary = initialState.salary;
+      state.searchedJobVal = initialState.searchedJobVal;
+    },
+    setSearchedJobVal: (state, action) => {
+      state.searchedJobVal = action.payload;
     },
   },
 });
 
-export const { setJobType, setExperience, setSalary, clearFilters } =
-  filterSlice.actions;
+export const {
+  setJobType,
+  setExperience,
+  setSalary,
+  clearFilters,
+  setSearchedJobVal,
+} = filterSlice.actions;
 
 export default filterSlice.reducer;

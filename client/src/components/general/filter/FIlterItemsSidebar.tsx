@@ -14,8 +14,8 @@ const FIlterItemsSidebar = () => {
   const dispatch = useDispatch();
 
   return (
-    <Sidebar variant="floating" className="mt-20  w-[20rem]">
-      <SidebarContent>
+    <Sidebar variant="floating" className="mt-20 py-4 w-[20rem]">
+      <SidebarContent className="overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200">
         <SidebarGroup>
           <div className="flex items-center justify-between">
             <SidebarGroupLabel>Filter</SidebarGroupLabel>
@@ -23,6 +23,7 @@ const FIlterItemsSidebar = () => {
               Reset
             </Button>
           </div>
+
           <SidebarGroupContent>
             <FilterPage />
           </SidebarGroupContent>

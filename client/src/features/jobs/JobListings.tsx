@@ -17,8 +17,9 @@ import {
   HiOutlineCurrencyRupee,
   HiOutlineMapPin,
 } from "react-icons/hi2";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
+import { addToBookmarks } from "@/redux/features/bookmarks/bookmarkSlice";
 
 enum FilterNames {
   fullTime = "Full-time",
@@ -28,24 +29,31 @@ enum FilterNames {
   freelance = "Freelance",
 }
 
+interface HandleBookmarksType {
+  ({ jobId, jobName }: { jobId: number; jobName: string }): void;
+}
+
 const JobListings = () => {
   const { data: jobs, isError, isLoading } = useGetJobsQuery();
-  const { jobType, experience, salary } = useSelector(
+  const { jobType, experience, salary, searchedJobVal } = useSelector(
     (state: RootState) => state.filter
   );
 
-  if (isLoading) {
-    return <p>Loading...</p>;
-  }
+  const dispatch = useDispatch();
 
   if (isError) {
     return <p>Failed to fetch an API</p>;
   }
 
+  const handleBookmarks: HandleBookmarksType = ({ jobId, jobName }) => {
+    dispatch(addToBookmarks({ jobId, jobName }));
+  };
+
   let filteredJobs;
 
   if (jobs) {
     filteredJobs = jobs;
+
     const jobsArr = Object.keys(jobType).reduce(
       (acc: string[], cur: string) => {
         if (jobType[cur]) {
@@ -81,11 +89,19 @@ const JobListings = () => {
         return salaryInNum >= salary * 100000;
       });
     }
+
+    if (searchedJobVal) {
+      filteredJobs = filteredJobs.filter((job) => {
+        const jobTitle = job.jobTitle.split(" ").join("");
+        return searchedJobVal.toLowerCase() === jobTitle.toLowerCase();
+      });
+    }
   }
 
   return (
-    <section className="py-6 lg:ml-16 lg:mt-20">
+    <section className="lg:ml-16">
       <div className="container-max px-6">
+        {isLoading && <p>Loading...</p>}
         <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-4">
           {filteredJobs &&
             filteredJobs.map((job) => (
@@ -98,7 +114,9 @@ const JobListings = () => {
                           src={job.companyLogo}
                           className="rounded-full object-cover"
                         />
-                        <AvatarFallback className="text-xs hidden">{job.companyName}</AvatarFallback>
+                        <AvatarFallback className="text-xs hidden">
+                          {job.companyName}
+                        </AvatarFallback>
                       </Avatar>
 
                       <div>
@@ -107,7 +125,15 @@ const JobListings = () => {
                       </div>
                     </div>
                     <div className="self-start">
-                      <HiOutlineBookmark className="icon-size" />
+                      <HiOutlineBookmark
+                        className="icon-size"
+                        onClick={() =>
+                          handleBookmarks({
+                            jobId: job.id,
+                            jobName: job.jobTitle,
+                          })
+                        }
+                      />
                     </div>
                   </div>
                 </CardHeader>

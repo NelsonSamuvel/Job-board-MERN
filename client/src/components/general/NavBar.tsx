@@ -6,15 +6,15 @@ import { navItems } from "@/utils/ui-data";
 
 const NavBar = () => {
   return (
-    <header className="px-2 md:px-4 py-6 fixed w-full bg-white">
+    <header className="px-2 md:px-4 py-6 sticky w-full top-0 bg-white z-50">
       <SidebarLayout>
         <nav className="max-md:flex-1  max-md:gap-4  flex items-center justify-between container-max gap-4">
-          <h1 className="text-primary font-semibold self-start max-lg:text-xl text-2xl">
-            Vacancee
-          </h1>
+          <NavLink to={"/jobs"}>
+            <h1 className="h1 text-primary self-start">Vacancee</h1>
+          </NavLink>
           <ul className="md:flex items-center hidden gap-4 text-muted-foreground">
             {navItems.slice(0, 2).map((item) => (
-              <li key={item.name} className="text-base max-lg:text-sm">
+              <li key={item.name} className="text-lg max-lg:text-base">
                 <NavLink
                   to={item.url}
                   className={({ isActive }) =>
@@ -34,7 +34,7 @@ const NavBar = () => {
 
           <ul className="md:flex items-center hidden gap-4 text-muted-foreground">
             {navItems.slice(2).map((item) => (
-              <li key={item.name} className="max-lg:text-sm">
+              <li key={item.name} className="text-lg max-lg:text-base">
                 <NavLink
                   to={item.url}
                   className={({ isActive }) =>
