@@ -7,7 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { useGetJobsQuery } from "@/redux/services/jobsApi";
+// import { useGetJobsQuery } from "@/redux/services/jobsApi";
 import { differenceInDateObj } from "@/utils/helper";
 import { RootState } from "../../redux/store";
 import {
@@ -20,6 +20,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import { addToBookmarks } from "@/redux/features/bookmarks/bookmarkSlice";
+import { JobsType } from "@/types/jobsType";
 
 enum FilterNames {
   fullTime = "Full-time",
@@ -29,31 +30,36 @@ enum FilterNames {
   freelance = "Freelance",
 }
 
-interface HandleBookmarksType {
-  ({ jobId, jobName }: { jobId: number; jobName: string }): void;
+// interface HandleBookmarksType {
+//   ({ jobId, jobName }: { jobId: number; jobName: string }): void;
+// }
+
+interface JobListingType {
+  jobs?: JobsType[];
+  isBookmarks?: boolean;
 }
 
-const JobListings = () => {
-  const { data: jobs, isError, isLoading } = useGetJobsQuery();
+const JobListings = ({ jobs, isBookmarks = false }: JobListingType) => {
   const { jobType, experience, salary, searchedJobVal } = useSelector(
     (state: RootState) => state.filter
   );
 
+  const { bookmarks } = useSelector((state: RootState) => state.bookmarks);
+
+  // const [selectedJob, setSelectedJob] = useState<number | null>(null);
+
   const dispatch = useDispatch();
 
-  if (isError) {
-    return <p>Failed to fetch an API</p>;
-  }
-
-  const handleBookmarks: HandleBookmarksType = ({ jobId, jobName }) => {
-    dispatch(addToBookmarks({ jobId, jobName }));
+  const handleBookmarks = (job: JobsType) => {
+    // setSelectedJob((cur) => (cur === job.id ? null : job.id));
+    dispatch(addToBookmarks(job));
   };
 
-  let filteredJobs;
+  let filteredJobs = jobs ? jobs : [];
 
-  if (jobs) {
-    filteredJobs = jobs;
+  const errorMsg = isBookmarks ? "No Bookmarks found" : "No Job Found";
 
+  if (jobs && !isBookmarks) {
     const jobsArr = Object.keys(jobType).reduce(
       (acc: string[], cur: string) => {
         if (jobType[cur]) {
@@ -99,80 +105,84 @@ const JobListings = () => {
   }
 
   return (
-    <section className="lg:ml-16">
+    <section>
       <div className="container-max px-6">
-        {isLoading && <p>Loading...</p>}
-        <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-4">
+        {filteredJobs && !filteredJobs.length && <p>{errorMsg}</p>}
+        <div className="  grid lg:grid-cols-2 xl:grid-cols-3 gap-4">
           {filteredJobs &&
-            filteredJobs.map((job) => (
-              <Card key={job.id}>
-                <CardHeader>
-                  <div className="flex justify-between items-center">
-                    <div className="space-y-2 md:flex md:gap-2 md:items-center">
-                      <Avatar className="w-[35px] hidden md:block">
-                        <AvatarImage
-                          src={job.companyLogo}
-                          className="rounded-full object-cover"
-                        />
-                        <AvatarFallback className="text-xs hidden">
-                          {job.companyName}
-                        </AvatarFallback>
-                      </Avatar>
+            filteredJobs.map((job) => {
+              const isBookmarkedJob = bookmarks.some(
+                (book) => book.id === job.id
+              );
+              return (
+                <Card key={job.id} className="">
+                  <CardHeader>
+                    <div className="flex justify-between items-center">
+                      <div className="space-y-2 md:flex md:gap-2 md:items-center">
+                        <Avatar className="w-[35px] hidden md:block">
+                          <AvatarImage
+                            src={job.companyLogo}
+                            className="rounded-full object-cover"
+                          />
+                          <AvatarFallback className="text-xs hidden">
+                            {job.companyName}
+                          </AvatarFallback>
+                        </Avatar>
 
-                      <div>
-                        <CardTitle>{job.jobTitle}</CardTitle>
-                        <CardDescription>{job.companyName}</CardDescription>
+                        <div>
+                          <CardTitle>{job.jobTitle}</CardTitle>
+                          <CardDescription>{job.companyName}</CardDescription>
+                        </div>
+                      </div>
+                      <div className="self-start">
+                        <HiOutlineBookmark
+                          className={`icon-size ${
+                            isBookmarks || isBookmarkedJob
+                              ? "fill-primary stroke-none"
+                              : ""
+                          }`}
+                          onClick={() => handleBookmarks(job)}
+                        />
                       </div>
                     </div>
-                    <div className="self-start">
-                      <HiOutlineBookmark
-                        className="icon-size"
-                        onClick={() =>
-                          handleBookmarks({
-                            jobId: job.id,
-                            jobName: job.jobTitle,
-                          })
-                        }
-                      />
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent className="space-y-2 max-sm:space-y-4 text-sm">
-                  <p className="flex gap-2 ">
-                    <span>
-                      {" "}
-                      <HiOutlineMapPin className="icon-size stroke-muted-foreground" />
-                    </span>
-                    {job.companyLocation}
-                  </p>
-                  <div className="flex items-center gap-4 flex-wrap">
-                    <p className="flex items-center gap-2">
-                      <HiOutlineCalendar className="icon-size stroke-muted-foreground" />
-                      <span>{job.experience}</span>
-                    </p>
-
-                    <p className="flex items-center gap-2">
-                      <HiOutlineCurrencyRupee className="h-6 w-6 stroke-muted-foreground" />
-                      <span>{job.ctc}</span>
-                    </p>
-                  </div>
-                </CardContent>
-                <CardFooter>
-                  <Badge variant={"secondary"}>
-                    <p className="flex items-center gap-2  text-muted-foreground">
-                      <HiOutlineClock className="" />
+                  </CardHeader>
+                  <CardContent className="space-y-2 max-sm:space-y-4 text-sm">
+                    <p className="flex gap-2 ">
                       <span>
-                        {differenceInDateObj(
-                          new Date(job.createdAt),
-                          new Date()
-                        )}{" "}
-                        ago
+                        {" "}
+                        <HiOutlineMapPin className="icon-size stroke-muted-foreground" />
                       </span>
+                      {job.companyLocation}
                     </p>
-                  </Badge>
-                </CardFooter>
-              </Card>
-            ))}
+                    <div className="flex items-center gap-4 flex-wrap">
+                      <p className="flex items-center gap-2">
+                        <HiOutlineCalendar className="icon-size stroke-muted-foreground" />
+                        <span>{job.experience}</span>
+                      </p>
+
+                      <p className="flex items-center gap-2">
+                        <HiOutlineCurrencyRupee className="h-6 w-6 stroke-muted-foreground" />
+                        <span>{job.ctc}</span>
+                      </p>
+                    </div>
+                  </CardContent>
+                  <CardFooter>
+                    <Badge variant={"secondary"}>
+                      <p className="flex items-center gap-2  text-muted-foreground">
+                        <HiOutlineClock className="" />
+                        <span>
+                          {differenceInDateObj(
+                            new Date(job.createdAt),
+                            new Date()
+                          )}{" "}
+                          ago
+                        </span>
+                      </p>
+                    </Badge>
+                  </CardFooter>
+                </Card>
+              );
+            })}
         </div>
       </div>
     </section>

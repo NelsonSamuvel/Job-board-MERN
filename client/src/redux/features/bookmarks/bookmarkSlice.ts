@@ -14,7 +14,16 @@ const bookmarkSlice = createSlice({
   initialState,
   reducers: {
     addToBookmarks: (state, action) => {
-      state.bookmarks.push(action.payload);
+      const { id } = action.payload;
+      const foundBookmarkId = state.bookmarks.findIndex(
+        (bookmark) => bookmark.id === id
+      );
+      console.log(foundBookmarkId);
+      if (foundBookmarkId >= 0) {
+        state.bookmarks.splice(foundBookmarkId, 1);
+      } else {
+        state.bookmarks.push(action.payload);
+      }
     },
   },
 });

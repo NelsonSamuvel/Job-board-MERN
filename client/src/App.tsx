@@ -1,4 +1,8 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 import AppLayout from "./pages/AppLayout";
 import JobListingPage from "./pages/JobListingPage";
 import BookmarksPage from "./pages/BookmarksPage";
@@ -8,6 +12,10 @@ const router = createBrowserRouter([
     path: "/",
     element: <AppLayout />,
     children: [
+      {
+        index: true,
+        element: <Navigate to="/jobs" />,
+      },
       {
         path: "/jobs",
         element: <JobListingPage />,

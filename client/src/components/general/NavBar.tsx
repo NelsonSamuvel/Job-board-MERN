@@ -9,7 +9,7 @@ const NavBar = () => {
     <header className="px-2 md:px-4 py-6 sticky w-full top-0 bg-white z-50">
       <SidebarLayout>
         <nav className="max-md:flex-1  max-md:gap-4  flex items-center justify-between container-max gap-4">
-          <NavLink to={"/jobs"}>
+          <NavLink to={"/"}>
             <h1 className="h1 text-primary self-start">Vacancee</h1>
           </NavLink>
           <ul className="md:flex items-center hidden gap-4 text-muted-foreground">
