@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 // import { useGetJobsQuery } from "@/redux/services/jobsApi";
-import { differenceInDateObj } from "@/utils/helper";
+import { differenceInDateObj, searchFilter } from "@/utils/helper";
 import { RootState } from "../../redux/store";
 import {
   HiOutlineBookmark,
@@ -21,6 +21,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import { addToBookmarks } from "@/redux/features/bookmarks/bookmarkSlice";
 import { JobsType } from "@/types/jobsType";
+import { Button } from "@/components/ui/button";
+import { NavLink } from "react-router-dom";
 
 enum FilterNames {
   fullTime = "Full-time",
@@ -97,10 +99,7 @@ const JobListings = ({ jobs, isBookmarks = false }: JobListingType) => {
     }
 
     if (searchedJobVal) {
-      filteredJobs = filteredJobs.filter((job) => {
-        const jobTitle = job.jobTitle.split(" ").join("");
-        return searchedJobVal.toLowerCase() === jobTitle.toLowerCase();
-      });
+      filteredJobs = searchFilter<JobsType>(filteredJobs, searchedJobVal);
     }
   }
 
@@ -147,26 +146,23 @@ const JobListings = ({ jobs, isBookmarks = false }: JobListingType) => {
                     </div>
                   </CardHeader>
                   <CardContent className="space-y-2 max-sm:space-y-4 text-sm">
-                    <p className="flex gap-2 ">
+                    <p className="flex items-center gap-2 ">
                       <span>
                         {" "}
                         <HiOutlineMapPin className="icon-size stroke-muted-foreground" />
                       </span>
                       {job.companyLocation}
                     </p>
-                    <div className="flex items-center gap-4 flex-wrap">
-                      <p className="flex items-center gap-2">
-                        <HiOutlineCalendar className="icon-size stroke-muted-foreground" />
-                        <span>{job.experience}</span>
-                      </p>
-
-                      <p className="flex items-center gap-2">
-                        <HiOutlineCurrencyRupee className="h-6 w-6 stroke-muted-foreground" />
-                        <span>{job.ctc}</span>
-                      </p>
-                    </div>
+                    <p className="flex items-center gap-2">
+                      <HiOutlineCalendar className="icon-size stroke-muted-foreground" />
+                      <span>{job.experience}</span>
+                    </p>
+                    <p className="flex items-center gap-2">
+                      <HiOutlineCurrencyRupee className="icon-size stroke-muted-foreground" />
+                      <span>{job.ctc}</span>
+                    </p>
                   </CardContent>
-                  <CardFooter>
+                  <CardFooter className="flex items-center justify-between">
                     <Badge variant={"secondary"}>
                       <p className="flex items-center gap-2  text-muted-foreground">
                         <HiOutlineClock className="" />
@@ -179,6 +175,9 @@ const JobListings = ({ jobs, isBookmarks = false }: JobListingType) => {
                         </span>
                       </p>
                     </Badge>
+                    <NavLink to={`${job.id}`}>
+                      <Button size={"sm"}>Apply Now</Button>
+                    </NavLink>
                   </CardFooter>
                 </Card>
               );

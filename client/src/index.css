@@ -83,4 +83,16 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  h1 {
+    @apply font-semibold max-lg:text-2xl text-3xl;
+  }
+
+  h2 {
+    @apply text-xl font-semibold text-muted-foreground;
+  }
+
+  h3 {
+    @apply font-semibold text-base;
+  }
 }

@@ -244,6 +244,257 @@
       "noOfOpenings": 1,
       "companyWebsite": "https://writeway.com",
       "createdAt": "2024-10-29"
+    },
+
+    {
+      "id": 11,
+      "jobTitle": "Frontend Developer",
+      "companyName": "BrightCode Solutions",
+      "companyLocation": "Pune, India",
+      "companyLogo": "https://picsum.photos/200?random=11",
+      "workType": "Full-time",
+      "experience": "3+ years",
+      "ctc": "₹10,00,000 - ₹15,00,000",
+      "applyBy": "2024-12-20",
+      "workLocationType": "Hybrid",
+      "responsibilities": [
+        "Build and optimize frontend features in React.",
+        "Ensure cross-browser compatibility and responsiveness."
+      ],
+      "qualifications": [
+        "Bachelor's degree in Computer Science",
+        "Strong knowledge of JavaScript and React"
+      ],
+      "skills": ["React", "JavaScript", "HTML/CSS", "TypeScript"],
+      "noOfOpenings": 2,
+      "companyWebsite": "https://brightcodesolutions.com",
+      "createdAt": "2024-10-28"
+    },
+    {
+      "id": 12,
+      "jobTitle": "Backend Developer",
+      "companyName": "Tech Giants",
+      "companyLocation": "Chennai, India",
+      "companyLogo": "https://picsum.photos/200?random=12",
+      "workType": "Full-time",
+      "experience": "4+ years",
+      "ctc": "₹8,00,000 - ₹12,00,000",
+      "applyBy": "2024-12-01",
+      "workLocationType": "Remote",
+      "responsibilities": [
+        "Design APIs and backend services using Node.js.",
+        "Optimize performance and ensure scalability."
+      ],
+      "qualifications": [
+        "Bachelor's degree in Software Engineering",
+        "Experience with server-side development"
+      ],
+      "skills": ["Node.js", "Express", "PostgreSQL", "REST APIs"],
+      "noOfOpenings": 3,
+      "companyWebsite": "https://techgiants.io",
+      "createdAt": "2024-10-20"
+    },
+    {
+      "id": 13,
+      "jobTitle": "Data Analyst",
+      "companyName": "Insightful Analytics",
+      "companyLocation": "Delhi, India",
+      "companyLogo": "https://picsum.photos/200?random=13",
+      "workType": "Full-time",
+      "experience": "2+ years",
+      "ctc": "₹6,00,000 - ₹8,00,000",
+      "applyBy": "2024-11-30",
+      "workLocationType": "On-site",
+      "responsibilities": [
+        "Gather and analyze business data.",
+        "Generate reports and present data insights."
+      ],
+      "qualifications": [
+        "Bachelor's degree in Statistics or Mathematics",
+        "Proficient in SQL and data visualization"
+      ],
+      "skills": ["SQL", "Excel", "Power BI", "Python"],
+      "noOfOpenings": 1,
+      "companyWebsite": "https://insightfulanalytics.com",
+      "createdAt": "2024-10-25"
+    },
+    {
+      "id": 14,
+      "jobTitle": "Mobile App Developer",
+      "companyName": "Smart Apps",
+      "companyLocation": "Kolkata, India",
+      "companyLogo": "https://picsum.photos/200?random=14",
+      "workType": "Freelance",
+      "experience": "2+ years",
+      "ctc": "₹5,00,000 - ₹7,00,000",
+      "applyBy": "2024-12-10",
+      "workLocationType": "Remote",
+      "responsibilities": [
+        "Develop cross-platform mobile applications.",
+        "Collaborate with UX/UI designers."
+      ],
+      "qualifications": [
+        "Bachelor's degree in Computer Science",
+        "Experience with mobile frameworks"
+      ],
+      "skills": ["React Native", "JavaScript", "REST APIs", "Firebase"],
+      "noOfOpenings": 2,
+      "companyWebsite": "https://smartapps.com",
+      "createdAt": "2024-10-18"
+    },
+    {
+      "id": 15,
+      "jobTitle": "Product Manager",
+      "companyName": "Visionary Tech",
+      "companyLocation": "Hyderabad, India",
+      "companyLogo": "https://picsum.photos/200?random=15",
+      "workType": "Full-time",
+      "experience": "5+ years",
+      "ctc": "₹15,00,000 - ₹20,00,000",
+      "applyBy": "2024-11-25",
+      "workLocationType": "Hybrid",
+      "responsibilities": [
+        "Drive product vision and roadmap.",
+        "Work with cross-functional teams to deliver product goals."
+      ],
+      "qualifications": [
+        "MBA or equivalent experience",
+        "Experience in Product Management"
+      ],
+      "skills": [
+        "Product Strategy",
+        "Agile",
+        "Scrum",
+        "Stakeholder Management"
+      ],
+      "noOfOpenings": 1,
+      "companyWebsite": "https://visionarytech.com",
+      "createdAt": "2024-10-22"
+    },
+    {
+      "id": 16,
+      "jobTitle": "UX/UI Designer",
+      "companyName": "DesignHub",
+      "companyLocation": "Ahmedabad, India",
+      "companyLogo": "https://picsum.photos/200?random=16",
+      "workType": "Contract",
+      "experience": "2+ years",
+      "ctc": "₹4,00,000 - ₹6,00,000",
+      "applyBy": "2024-12-05",
+      "workLocationType": "On-site",
+      "responsibilities": [
+        "Develop wireframes and prototypes.",
+        "Ensure design consistency and user-friendly interfaces."
+      ],
+      "qualifications": [
+        "Bachelor's degree in Design or related field",
+        "Proficiency in design software"
+      ],
+      "skills": ["Figma", "Adobe XD", "Sketch", "Illustrator"],
+      "noOfOpenings": 1,
+      "companyWebsite": "https://designhub.com",
+      "createdAt": "2024-10-19"
+    },
+    {
+      "id": 17,
+      "jobTitle": "DevOps Engineer",
+      "companyName": "CloudFlow",
+      "companyLocation": "Pune, India",
+      "companyLogo": "https://picsum.photos/200?random=17",
+      "workType": "Full-time",
+      "experience": "3+ years",
+      "ctc": "₹12,00,000 - ₹16,00,000",
+      "applyBy": "2024-12-15",
+      "workLocationType": "Hybrid",
+      "responsibilities": [
+        "Manage and optimize CI/CD pipelines.",
+        "Ensure system reliability and performance."
+      ],
+      "qualifications": [
+        "Experience with cloud infrastructure",
+        "Knowledge of DevOps best practices"
+      ],
+      "skills": ["AWS", "Docker", "Kubernetes", "Jenkins"],
+      "noOfOpenings": 2,
+      "companyWebsite": "https://cloudflow.io",
+      "createdAt": "2024-10-23"
+    },
+    {
+      "id": 18,
+      "jobTitle": "Marketing Specialist",
+      "companyName": "DigitalSpark",
+      "companyLocation": "Mumbai, India",
+      "companyLogo": "https://picsum.photos/200?random=18",
+      "workType": "Part-time",
+      "experience": "1+ year",
+      "ctc": "₹4,00,000 - ₹6,00,000",
+      "applyBy": "2024-12-18",
+      "workLocationType": "Remote",
+      "responsibilities": [
+        "Plan and execute digital marketing campaigns.",
+        "Measure and report on campaign performance."
+      ],
+      "qualifications": [
+        "Bachelor's degree in Marketing",
+        "Experience in social media marketing"
+      ],
+      "skills": [
+        "SEO",
+        "Google Analytics",
+        "Content Marketing",
+        "Social Media"
+      ],
+      "noOfOpenings": 3,
+      "companyWebsite": "https://digitalspark.com",
+      "createdAt": "2024-10-27"
+    },
+    {
+      "id": 19,
+      "jobTitle": "Full Stack Developer",
+      "companyName": "TechLab",
+      "companyLocation": "Bangalore, India",
+      "companyLogo": "https://picsum.photos/200?random=19",
+      "workType": "Full-time",
+      "experience": "3+ years",
+      "ctc": "₹10,00,000 - ₹14,00,000",
+      "applyBy": "2024-11-28",
+      "workLocationType": "On-site",
+      "responsibilities": [
+        "Develop full-stack applications using MERN stack.",
+        "Participate in Agile processes."
+      ],
+      "qualifications": [
+        "Bachelor's degree in Computer Science",
+        "Proficiency in frontend and backend development"
+      ],
+      "skills": ["React", "Node.js", "MongoDB", "Express"],
+      "noOfOpenings": 1,
+      "companyWebsite": "https://techlab.io",
+      "createdAt": "2024-10-29"
+    },
+    {
+      "id": 20,
+      "jobTitle": "Content Writer",
+      "companyName": "WriteLine",
+      "companyLocation": "Remote",
+      "companyLogo": "https://picsum.photos/200?random=20",
+      "workType": "Freelance",
+      "experience": "1+ year",
+      "ctc": "₹3,00,000 - ₹5,00,000",
+      "applyBy": "2024-12-22",
+      "workLocationType": "Remote",
+      "responsibilities": [
+        "Research and write content for websites.",
+        "Collaborate with the SEO team for optimized content."
+      ],
+      "qualifications": [
+        "Bachelor's in Journalism",
+        "Excellent writing skills"
+      ],
+      "skills": ["Content Writing", "SEO", "Copywriting", "Editing"],
+      "noOfOpenings": 1,
+      "companyWebsite": "https://writeline.com",
+      "createdAt": "2024-10-24"
     }
   ]
 }

@@ -1,5 +1,6 @@
+import { JobsType } from "@/types/jobsType";
 import { intervalToDuration } from "date-fns";
-export const differenceInDateObj = (date1: Date, date2: Date): string => {
+const differenceInDateObj = (date1: Date, date2: Date): string => {
   const dateObj = intervalToDuration({ start: date1, end: date2 });
   let res = "";
   if (dateObj.months) {
@@ -24,3 +25,12 @@ export const differenceInDateObj = (date1: Date, date2: Date): string => {
 
   return res;
 };
+
+const searchFilter = <T extends JobsType>(jobs: T[], value: string): T[] => {
+  return jobs.filter((job) => {
+    const jobTitle = job.jobTitle.split(" ").join("");
+    return value.toLowerCase() === jobTitle.toLowerCase();
+  });
+};
+
+export { differenceInDateObj, searchFilter };

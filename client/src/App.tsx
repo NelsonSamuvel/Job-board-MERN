@@ -6,6 +6,8 @@ import {
 import AppLayout from "./pages/AppLayout";
 import JobListingPage from "./pages/JobListingPage";
 import BookmarksPage from "./pages/BookmarksPage";
+import JobDetailsPage from "./pages/JobDetailsPage";
+import ErrorPage from "./pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
@@ -21,10 +23,15 @@ const router = createBrowserRouter([
         element: <JobListingPage />,
       },
       {
+        path: "/jobs/:jobId",
+        element: <JobDetailsPage />,
+      },
+      {
         path: "/bookmarks",
         element: <BookmarksPage />,
       },
     ],
+    errorElement: <ErrorPage />,
   },
 ]);
 
