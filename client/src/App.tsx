@@ -9,6 +9,7 @@ import BookmarksPage from "./pages/BookmarksPage";
 import JobDetailsPage from "./pages/JobDetailsPage";
 import ErrorPage from "./pages/ErrorPage";
 import SignupPage from "./pages/SignupPage";
+import LoginPage from "./pages/LoginPage";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <SignupPage />,
+      },
+      {
+        path: "/login",
+        element: <LoginPage />,
       },
     ],
     errorElement: <ErrorPage />,

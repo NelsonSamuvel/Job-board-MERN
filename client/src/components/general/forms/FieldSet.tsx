@@ -16,7 +16,7 @@ const Fieldset = ({ children, error, label, className }: FieldsetType) => {
         </label>
         {children}
       </div>
-      <p>{error}</p>
+      <p className="text-xs text-red-700 mt-1 ml-2">{error}</p>
     </div>
   );
 };
