@@ -18,7 +18,6 @@ const bookmarkSlice = createSlice({
       const foundBookmarkId = state.bookmarks.findIndex(
         (bookmark) => bookmark.id === id
       );
-      console.log(foundBookmarkId);
       if (foundBookmarkId >= 0) {
         state.bookmarks.splice(foundBookmarkId, 1);
       } else {

@@ -23,6 +23,7 @@ import { Button } from "@/components/ui/button";
 
 const SimilarJobs = ({ job }: JobDetailsType) => {
   const { data: jobs } = useGetJobsQuery();
+  
 
   const similarJobs = jobs
     ? jobs.filter(
@@ -34,12 +35,12 @@ const SimilarJobs = ({ job }: JobDetailsType) => {
     : [];
 
   return (
-    <div className="max-lg:py-4  h-screen scrollbar-thin">
+    <section className="max-lg:py-4  h-screen scrollbar-thin">
       {similarJobs.length > 0 ? (
-        <div>
+        <>
           <h2 className="pb-4 text-stone-800">Similar Jobs</h2>
           {similarJobs.map((job) => (
-            <Card className="mb-4">
+            <Card className="mb-4" key={job.id}>
               <CardHeader>
                 <div className="flex justify-between items-center">
                   <div className="space-y-2 md:flex md:gap-2 md:items-center">
@@ -97,17 +98,17 @@ const SimilarJobs = ({ job }: JobDetailsType) => {
                     </span>
                   </p>
                 </Badge>
-                <NavLink to={`${job.id}`}>
+                <NavLink to={`/jobs/${job.id}`}>
                   <Button size={"sm"}>Apply Now</Button>
                 </NavLink>
               </CardFooter>
             </Card>
           ))}
-        </div>
+        </>
       ) : (
         <p>No Similar Jobs Found</p>
       )}
-    </div>
+    </section>
   );
 };
 

@@ -1,26 +1,42 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { addToBookmarks } from "@/redux/features/bookmarks/bookmarkSlice";
+import { RootState } from "@/redux/store";
 import { JobsType } from "@/types/jobsType";
 import {
   HiOutlineBookmark,
   HiOutlineMapPin,
   HiOutlineShare,
 } from "react-icons/hi2";
+import { useDispatch, useSelector } from "react-redux";
 
 export type JobDetailsType = {
   job: JobsType;
 };
 
 const JobDetails = ({ job }: JobDetailsType) => {
+  const { bookmarks } = useSelector((state: RootState) => state.bookmarks);
+  const dispatch = useDispatch();
+
+  const isBookmarked = bookmarks.some((bookmark) => job.id === bookmark.id);
+
   return (
-    <div className="max-lg:border-b-2 max-lg:pb-4 flex-1 lg:px-6">
+    <section className="max-lg:border-b-2 max-lg:pb-4 flex-1 lg:px-6">
       {/* Job Info */}
       <div className="flex items-center justify-between flex-wrap gap-2">
         <h2 className="text-stone-700">{job.jobTitle}</h2>
         <div className="flex items-center gap-2">
           <Button>Apply Now</Button>
-          <Button variant={"secondary"} size={"icon"}>
-            <HiOutlineBookmark className="icon-size" />
+          <Button
+            variant={"secondary"}
+            size={"icon"}
+            onClick={() => dispatch(addToBookmarks(job))}
+          >
+            <HiOutlineBookmark
+              className={`icon-size ${
+                isBookmarked ? "fill-primary stroke-none" : ""
+              }`}
+            />
           </Button>
           <Button variant={"secondary"} size={"icon"}>
             <HiOutlineShare className="icon-size" />
@@ -108,7 +124,7 @@ const JobDetails = ({ job }: JobDetailsType) => {
         <h3>Number of Openings</h3>
         <p className="text-small mt-2">{job.noOfOpenings}</p>
       </div>
-    </div>
+    </section>
   );
 };
 

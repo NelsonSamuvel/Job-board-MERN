@@ -89,7 +89,7 @@
   }
 
   h2 {
-    @apply text-xl font-semibold text-muted-foreground;
+    @apply text-xl font-semibold;
   }
 
   h3 {
