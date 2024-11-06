@@ -1,3 +1,5 @@
+import ErrorMsg from "@/components/ui/ErrorMsg";
+import Loader from "@/components/ui/Loader";
 import JobDetails from "@/features/jobs/JobDetails";
 import SimilarJobs from "@/features/jobs/SimilarJobs";
 import { useGetSingleJobQuery } from "@/redux/services/jobsApi";
@@ -8,11 +10,11 @@ const JobDetailsPage = () => {
   const { data: job, isLoading, isError } = useGetSingleJobQuery(Number(jobId));
 
   if (isLoading) {
-    return <p>Loading</p>;
+    return <Loader />;
   }
 
   if (isError) {
-    return <p>Failed To fetch job</p>;
+    return <ErrorMsg message="Failed To fetch" />;
   }
 
   return (
