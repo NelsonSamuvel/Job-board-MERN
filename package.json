@@ -1,0 +1,26 @@
+{
+  "name": "01.job-board",
+  "version": "1.0.0",
+  "description": "Vacancee is a web application where users can discover jobs.This app provides an easy to use interface to filter the jobs based on salary, experience, work type etc. It allows the users to bookmark the jobs for later use.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "server": "nodemon server/index.js",
+    "client": "npm run dev --prefix client"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.8.0",
+    "nodemon": "^3.1.7"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0"
+  }
+}
