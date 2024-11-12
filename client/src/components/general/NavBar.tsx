@@ -3,6 +3,8 @@ import { Button } from "../ui/button";
 import { NavLink } from "react-router-dom";
 import SidebarLayout from "../../layout/SidebarLayout";
 import { navItems } from "@/utils/ui-data";
+import Dropdown from "./forms/Dropdown";
+import { HiOutlineBookmark } from "react-icons/hi2";
 
 const NavBar = () => {
   return (
@@ -34,7 +36,7 @@ const NavBar = () => {
 
           <ul className="md:flex items-center hidden gap-4 text-muted-foreground">
             {navItems.slice(2).map((item) => (
-              <li key={item.name} className="text-lg max-lg:text-base">
+              <li key={item.name} className="text-lg max-lg:text-base hidden">
                 <NavLink
                   to={item.url}
                   className={({ isActive }) =>
@@ -49,6 +51,17 @@ const NavBar = () => {
               <Button className="rounded-full max-md:h-8  max-md:px-3 max-md:text-xs">
                 For Employers
               </Button>
+            </li>
+            <li className="bg-muted rounded-full">
+              <Dropdown
+                trigger="nelsonsamvl@gmail.com"
+                items={[
+                  {
+                    name: "bookmarks",
+                    icon: <HiOutlineBookmark />,
+                  },
+                ]}
+              />
             </li>
           </ul>
         </nav>

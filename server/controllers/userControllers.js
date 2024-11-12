@@ -9,7 +9,7 @@ const createUser = asyncHandler(async (req, res) => {
 
   if (!firstName || !lastName || !email || !password) {
     res.status(400).send("Please fill all the fields");
-  }
+  } 
 
   const emailExists = await User.findOne({ email });
   if (emailExists) {

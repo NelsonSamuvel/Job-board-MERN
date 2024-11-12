@@ -31,7 +31,7 @@ const SignupForm = () => {
   return (
     <div className="container-max padding-x min-h-[80vh] flex justify-center items-center">
       <div className="mx-auto space-y-6 border px-8 py-6 shadow-md sm:max-w-[600px] grow">
-        <h2 className="te xt-primary">Create Account</h2>
+        <h2 className="text-primary">Create Account</h2>
         <div>
           <Button
             variant={"secondary"}

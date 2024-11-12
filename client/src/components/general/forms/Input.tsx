@@ -19,7 +19,9 @@ const inputVariants = cva("border px-3 py-2 rounded-md block text-md", {
 interface InputType
   extends InputHTMLAttributes<HTMLInputElement>,
     VariantProps<typeof inputVariants> {
-  register: UseFormRegister<Partial<FormDataType>>;
+  register:
+    | UseFormRegister<FormDataType>
+    | UseFormRegister<Partial<FormDataType>>;
   name: keyof Partial<FormDataType>;
 }
 
